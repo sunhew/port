@@ -64,6 +64,8 @@ main {
     font-weight: lighter;
     color: black;
     transform: rotate(390deg);
+    cursor: pointer;
+    /* Add cursor pointer to indicate clickability */
 }
 
 .content {
@@ -100,4 +102,17 @@ main {
     display: inline-block;
     padding: 3px;
     transform: rotate(45deg);
+}
+
+.menu-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }

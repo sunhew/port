@@ -32,20 +32,39 @@
             });
 
             function showContent() {
-                gsap.set([circle, header], {
+                gsap.set(circle, {
                     position: "fixed",
                     top: "20px",
                     right: "20px",
-                    x: 755,
-                    y: 0,
-                    transform: "none",
-                });
-                gsap.set(circle, {
                     width: "145px",
                     height: "145px",
+                    x: 755,
+                    y: 0,
+                    transform: "none"
                 });
-                menuText.style.display = "block"; // Show the text
-                content.style.display = "block"; // Show the content
+                gsap.set(header, {
+                    position: "fixed",
+                    top: "20px",
+                    left: "20px"
+                });
+                menuText.style.display = "block";
+
+
+                gsap.fromTo(content, { opacity: 0 }, { opacity: 1, duration: 0.5, display: "block" });
+
+
+                menuText.addEventListener("click", function () {
+                    toggleMenu();
+                });
+            }
+
+            function toggleMenu() {
+                const menuContent = document.querySelector(".menu-content");
+                if (menuContent.style.display === "none" || !menuContent.style.display) {
+                    gsap.fromTo(menuContent, { opacity: 0 }, { opacity: 1, duration: 0.5, display: "block" });
+                } else {
+                    gsap.fromTo(menuContent, { opacity: 1 }, { opacity: 0, duration: 0.5, display: "none" });
+                }
             }
         });
     </script>
@@ -80,6 +99,8 @@
         <section class="panel" id="section03">
             <div class="dummy"></div>
         </section>
+        <div class="menu-content" style="display: none;">
+        </div>
     </main>
 </body>
 
