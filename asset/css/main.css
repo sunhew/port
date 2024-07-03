@@ -24,7 +24,7 @@ html {
     color: white;
 }
 
-.highlight {
+.logohi {
     font-weight: bold;
     color: white;
 }
@@ -35,14 +35,6 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.panel {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .circle {
