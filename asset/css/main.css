@@ -1,0 +1,103 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+#header {
+    position: absolute;
+    top: 20px;
+    left: -730px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: lighter;
+    color: white;
+}
+
+.highlight {
+    font-weight: bold;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.panel {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 500px;
+    height: 500px;
+    background: lightblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-text {
+    font-size: 32px;
+    font-weight: lighter;
+    color: black;
+    transform: rotate(390deg);
+}
+
+.content {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 64px;
+    margin: 0;
+}
+
+.content h1 span {
+    display: block;
+}
+
+.content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 20px auto 0;
+    font-family: var(--fontK);
+}
+
+.scroll-indicator {
+    margin-top: 40px;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+}

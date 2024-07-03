@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const circle = document.querySelector(".circle");
+            const header = document.querySelector("#header");
+            const content = document.querySelector(".content");
+            const menuText = document.createElement("div");
+            menuText.classList.add("menu-text");
+            menuText.textContent = "MENU";
+            circle.appendChild(menuText);
+            menuText.style.display = "none";
+
+            const timeline = gsap.timeline({ onComplete: showContent });
+
+            timeline.to(circle, {
+                duration: 2,
+                x: window.innerWidth / 2 - 125, // 중앙에서 시작
+                y: -(window.innerHeight / 2 - 92), // 중앙에서 시작
+                scale: 145 / 500,
+                rotation: 360,
+                borderRadius: "50%",
+                transformOrigin: "center",
+                ease: "power2.inOut"
+            });
+
+            function showContent() {
+                gsap.set([circle, header], {
+                    position: "fixed",
+                    top: "20px",
+                    right: "20px",
+                    x: 755,
+                    y: 0,
+                    transform: "none",
+                });
+                gsap.set(circle, {
+                    width: "145px",
+                    height: "145px",
+                });
+                menuText.style.display = "block"; // Show the text
+                content.style.display = "block"; // Show the content
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">Creative<span class="highlight">Dev</span></div>
+    </header>
+    <main>
+        <section class="panel" id="section01">
+            <div class="circle"></div>
+        </section>
+        <section class="content" style="display: none;">
+            <h1>
+                <span>the</span>
+                <span>Innovation</span>
+                <span>portfolio</span>
+            </h1>
+            <p>
+                어떤 일이든 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.
+                저의 열정과 도전정신을 접목한 세계가 배움에 있어
+                겸손함을 유지하며 새롭게 발전하는 개발자가 되겠습니다.
+            </p>
+            <div class="scroll-indicator">
+                <div class="arrow"></div>
+            </div>
+        </section>
+        <section class="panel" id="section02">
+            <div class="dummy"></div>
+        </section>
+        <section class="panel" id="section03">
+            <div class="dummy"></div>
+        </section>
+    </main>
+</body>
+
+</html>

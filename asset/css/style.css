@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/* 기본 세팅 */
+@import "var.css";
+@import "mixins.css";
+@import "fonts.css";
+@import "resets.css";
+
+/* 페이지 세팅 */
+@import "header.css";
+@import "main.css";
