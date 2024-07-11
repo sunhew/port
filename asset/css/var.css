@@ -1,11 +1,12 @@
 :root {
     --fontK: "IropkeBatangM";
     --fontE: "PPNeueWorld";
+    --subfontE: "Poppins";
 
     --mainBg: #f6fdfa;
-    --pointColor: #7ddcd7;
+    --pointColor: #416BFF;
     --pointColorhover: #c9f1ef;
-    --pointBg: #c0e0e042;
+    --pointBg: #0038E9;
 
     --black: #000;
     --black100: #111;

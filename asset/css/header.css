@@ -1,25 +1,41 @@
-header {
-    background: var(--mainBg);
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-    list-style: none;
+#header {
+    font-family: var(--subfontE);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 1vw;
+    position: fixed;
+    gap: 82vw;
+    top: 0;
 }
 
-nav ul li {
-    margin: 0 10px;
+.logo {
+    font-size: 1.575vw;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: var(--black);
-    font-size: 18px;
+.logo>span {
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: var(--pointColor);
+.nav {
+    position: relative;
+    width: 5vw;
+    height: 5vw;
+    font-weight: lighter;
+    padding: 3vw;
+    background-color: var(--pointBg);
+    border-radius: 100%;
+    transform: rotate(25deg);
+    right: 0;
+}
+
+.nav p {
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9vw;
+    color: var(--white);
+    font-weight: lighter;
+    border-radius: 100%;
+    right: 1.7vw;
+    top: 2.3vw;
 }

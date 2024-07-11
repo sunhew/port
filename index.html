@@ -6,102 +6,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오</title>
     <link rel="stylesheet" href="asset/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const circle = document.querySelector(".circle");
-            const header = document.querySelector("#header");
-            const content = document.querySelector(".content");
-            const menuText = document.createElement("div");
-            menuText.classList.add("menu-text");
-            menuText.textContent = "MENU";
-            circle.appendChild(menuText);
-            menuText.style.display = "none";
+    <style>
+        #particles {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            filter: url('#goo');
+        }
 
-            const timeline = gsap.timeline({ onComplete: showContent });
+        .circle {
+            fill: #0038E9;
+        }
 
-            timeline.to(circle, {
-                duration: 2,
-                x: window.innerWidth / 2 - 125, // 중앙에서 시작
-                y: -(window.innerHeight / 2 - 92), // 중앙에서 시작
-                scale: 145 / 500,
-                rotation: 360,
-                borderRadius: "50%",
-                transformOrigin: "center",
-                ease: "power2.inOut"
-            });
-
-            function showContent() {
-                gsap.set(circle, {
-                    position: "fixed",
-                    top: "20px",
-                    right: "20px",
-                    width: "145px",
-                    height: "145px",
-                    x: 755,
-                    y: 0,
-                    transform: "none"
-                });
-                gsap.set(header, {
-                    position: "fixed",
-                    top: "20px",
-                    left: "20px"
-                });
-                menuText.style.display = "block";
-
-
-                gsap.fromTo(content, { opacity: 0 }, { opacity: 1, duration: 0.5, display: "block" });
-
-
-                menuText.addEventListener("click", function () {
-                    toggleMenu();
-                });
-            }
-
-            function toggleMenu() {
-                const menuContent = document.querySelector(".menu-content");
-                if (menuContent.style.display === "none" || !menuContent.style.display) {
-                    gsap.fromTo(menuContent, { opacity: 0 }, { opacity: 1, duration: 0.5, display: "block" });
-                } else {
-                    gsap.fromTo(menuContent, { opacity: 1 }, { opacity: 0, duration: 0.5, display: "none" });
-                }
-            }
-        });
-    </script>
+        svg {
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            transform: translateZ(0px);
+        }
+    </style>
 </head>
 
 <body>
     <header id="header">
-        <div class="logo">Creative<span class="logohi">Dev</span></div>
+        <h1 class="logo">Creative<span>Dev</span></h1>
+        <nav class="nav">
+            <p>MENU</p>
+        </nav>
     </header>
-    <main>
-        <section class="capter" id="section01">
-            <div class="circle"></div>
-        </section>
-        <section class="content" style="display: none;">
-            <h1>
-                <span>the</span>
-                <span>Innovation</span>
-                <span>portfolio</span>
-            </h1>
-            <p>
-                어떤 일이든 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.
-                저의 열정과 도전정신을 접목한 세계가 배움에 있어
-                겸손함을 유지하며 새롭게 발전하는 개발자가 되겠습니다.
-            </p>
-            <div class="scroll-indicator">
+    <!-- header -->
+
+    <section id="section1">
+        <p class="line_own"> the </p>
+        <p class="line_to"> Innovation</p>
+        <p class="line_tree"> portfolio </p>
+        <p class="text">
+            어떤 일이든 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다. <br />
+            저의 열정과 도전정신을 접목한 세계가 배움에 있어 겸손함을 유지하며 <br />
+            새롭게 발전하는 개발자가 되겠습니다.
+        </p>
+        <article class="main_circle">
+            <div class="middle_circle"></div>
+            <div class="Small_circle"></div>
+            <div class="scroll_circle">
                 <div class="arrow"></div>
             </div>
-        </section>
-        <section class="capter" id="section02">
-            <div class="dummy"></div>
-        </section>
-        <section class="capter" id="section03">
-            <div class="dummy"></div>
-        </section>
-        <div class="menu-content" style="display: none;">
+        </article>
+        <div id="particles"></div>
+        <svg>
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="12" />
+                    <feColorMatrix in="blur" result="colormatrix" type="matrix"
+                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" />
+                    <feBlend in="SourceGraphic" in2="colormatrix" />
+                </filter>
+            </defs>
+        </svg>
+    </section>
+    <!-- section1 -->
+
+    <section id="section2">
+        <div class="intro_circle"></div>
+        <div class="about_circle">
+            <p class="about">about</p>
+            <p class="me">me</p>
         </div>
-    </main>
+    </section>
+    <!-- section2 -->
+
+    <section id="section3">
+        <div class="coding">
+            <div class="circle"></div>
+            <p>Frontend</p>
+            <h2>Coding</h2>
+        </div>
+        <div class="project">
+            <div class="circle"></div>
+            <h2>Project</h2>
+            <p>Full - stack</p>
+        </div>
+        <div class="blog">
+            <div class="circle"></div>
+            <h2>Blog</h2>
+            <p>Revise</p>
+            <div class="image-placeholder"></div>
+        </div>
+        <div class="section3_div"></div>
+    </section>
+    <!-- section3 -->
+
+    <section id="section4">
+
+    </section>
+    <!-- section4 -->
+
+    <section id="section5">
+
+    </section>
+    <!-- section5 -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        history.scrollRestoration = "auto"
+
+        const circle = '<svg viewBox="0 0 67.4 67.4"><circle class="circle" cx="33.7" cy="33.7" r="33.7"/></svg>'
+
+        class Particle {
+
+            constructor(svg, coordinates, friction) {
+                this.svg = svg
+                this.steps = ($(window).height()) / 2
+                this.item = null
+                this.friction = friction
+                this.coordinates = coordinates
+                this.position = this.coordinates.y
+                this.dimensions = this.render()
+                this.move()
+                this.rotation = Math.random() > 0.5 ? "-" : "+"
+                this.scale = 0.4 + (Math.random() * 2)
+                this.siner = $(window).width() / 2.5 * Math.random()
+            }
+            destroy() {
+                this.item.remove()
+            }
+
+            move() {
+                this.position = this.position - this.friction
+                let top = this.position;
+                let left = this.coordinates.x + Math.sin(this.position * Math.PI / this.steps) * this.siner;
+                this.item.css({
+                    transform: "translateX(" + left + "px) translateY(" + top + "px) scale(" + this.scale + ") rotate(" + (this.rotation) + (this.position + this.dimensions.height) + "deg)"
+                })
+
+                if (this.position < -(this.dimensions.height)) {
+                    this.destroy()
+                    return false
+                } else {
+                    return true
+                }
+            }
+
+            render() {
+                this.item = $(this.svg, {
+                    css: {
+                        transform: "translateX(" + this.coordinates.x + "px) translateY(" + this.coordinates.y + "px)"
+                    }
+                })
+                $("#particles").append(this.item)
+                return {
+                    width: this.item.width(),
+                    height: this.item.height()
+                }
+            }
+        }
+
+
+        let isPaused = false;
+        window.onblur = function () {
+            isPaused = true;
+        }.bind(this)
+        window.onfocus = function () {
+            isPaused = false;
+        }.bind(this)
+
+        //-------------------------------
+        let particles = []
+
+        setInterval(function () {
+            if (!isPaused) {
+                particles.push(
+                    new Particle(circle, {
+                        "x": (Math.random() * $(window).width()),
+                        "y": $(window).height() + 100
+                    }, (1 + Math.random()))
+                )
+            }
+        }, 180)
+
+        function update() {
+            particles = particles.filter(function (p) {
+                return p.move()
+            })
+            requestAnimationFrame(update.bind(this))
+        }
+        update()
+    </script>
 </body>
 
 </html>
