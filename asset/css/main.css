@@ -363,12 +363,12 @@ body {
 }
 
 .card-content p {
-    font-size: 1em;
+    font-size: 0.8rem;
     margin-bottom: 15px;
 }
 
 .card-content a {
-    font-size: 1em;
+    font-size: 0.8rem;
     text-decoration: none;
     border-bottom: 1px solid;
     transition: color 0.3s, border-color 0.3s;
