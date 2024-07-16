@@ -182,8 +182,8 @@ body {
     width: 3vw;
     height: 3vw;
     position: absolute;
-    top: -3vw;
-    left: -7vw;
+    top: 10vw;
+    left: -7.1vw;
     background-color: var(--pointBg);
     border-radius: 50%;
 }
@@ -195,7 +195,7 @@ body {
     line-height: 1;
     position: relative;
     display: inline-block;
-    top: 1vw;
+    top: 14vw;
     left: -4vw;
 }
 
@@ -203,7 +203,7 @@ body {
     font-size: 3vw;
     font-weight: 800;
     position: absolute;
-    bottom: -4vw;
+    bottom: -16vw;
     left: 17.9vw;
     display: inline-block;
     width: 100%;
@@ -245,7 +245,7 @@ body {
     font-size: 3.375vw;
     font-weight: 800;
     position: absolute;
-    top: -30.6vw;
+    top: -17.6vw;
     left: -13.5vw;
     z-index: 2;
 }
@@ -271,7 +271,7 @@ body {
     background-color: var(--pointBg);
     border-radius: 50%;
     position: absolute;
-    bottom: 13.17vw;
+    bottom: 4.17vw;
     left: 63.77vw;
 }
 
