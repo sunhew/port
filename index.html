@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포트폴리오</title>
+    <title>Document</title>
+
     <link rel="stylesheet" href="asset/css/style.css">
     <style>
+        body {
+            overflow-x: hidden;
+        }
+
         #particles {
             position: absolute;
             left: 0;
@@ -14,11 +19,7 @@
             width: 100%;
             height: 100%;
             z-index: 10;
-            filter: url('#goo');
-        }
-
-        .circle {
-            fill: #0038E9;
+            filter: url("#goo");
         }
 
         svg {
@@ -27,35 +28,24 @@
             height: 30px;
             position: absolute;
             transform: translateZ(0px);
+            fill: #0038E9;
         }
     </style>
 </head>
 
 <body>
     <header id="header">
-        <h1 class="logo">Creative<span>Dev</span></h1>
-        <nav class="nav">
-            <p>MENU</p>
-        </nav>
+        <h1>Creative<span>Dev</span></h1>
+        <nav>menu</nav>
     </header>
-    <!-- header -->
+    <!-- //header -->
 
     <section id="section1">
-        <p class="line_own"> the </p>
-        <p class="line_to"> Innovation</p>
-        <p class="line_tree"> portfolio </p>
-        <p class="text">
-            어떤 일이든 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다. <br />
-            저의 열정과 도전정신을 접목한 세계가 배움에 있어 겸손함을 유지하며 <br />
-            새롭게 발전하는 개발자가 되겠습니다.
-        </p>
-        <article class="main_circle">
-            <div class="middle_circle"></div>
-            <div class="Small_circle"></div>
-            <div class="scroll_circle">
-                <div class="arrow"></div>
-            </div>
-        </article>
+        <div class="text">
+            <div>the</div>
+            <div>Innovation</div>
+            <div>portfolio</div>
+        </div>
         <div id="particles"></div>
         <svg>
             <defs>
@@ -68,117 +58,17 @@
             </defs>
         </svg>
     </section>
-    <!-- section1 -->
+    <!-- //section1 -->
 
-    <section id="section2">
-        <div class="intro_circle"></div>
-        <div class="about_circle">
-            <p class="about">about</p>
-            <p class="me">me</p>
-        </div>
-    </section>
-    <!-- section2 -->
+    <section id="section2"></section>
+    <section id="section3"></section>
+    <section id="section4"></section>
+    <section id="section5"></section>
+    <section id="section6"></section>
 
-    <section id="section3">
-        <div class="coding">
-            <div class="circle"></div>
-            <p>Frontend</p>
-            <h2>Coding</h2>
-        </div>
-        <div class="project">
-            <div class="circle"></div>
-            <h2>Project</h2>
-            <p>Full - stack</p>
-        </div>
-        <div class="blog">
-            <div class="circle"></div>
-            <h2>Blog</h2>
-            <p>Revise</p>
-            <div class="image-placeholder"></div>
-        </div>
-        <div class="section3_div"></div>
-    </section>
-    <!-- section3 -->
-
-    <section id="section4">
-        <div class="card">
-            <img src="asset/img/mainhtml.jpg" alt="Card Image 1">
-            <div class="overlay-content">
-                <div class="h3-container">
-                    <span class="blue-circle"></span>
-                    <h3>6개월 동안 작업한 작업물입니다.</h3>
-                </div>
-            </div>
-            <div class="card-content">
-                <div class="h3-container">
-                    <span class="blue-circle"></span>
-                    <h3>“지난 6개월간의 기록.”</h3>
-                </div>
-                <p>이 사이트는 HTML5, CSS3, 그리고 JAVASCRIPT를 사용하여 개발했습니다. 6개월 동안 제작한 사이트들이 아이콘 형태로 모여 있어, 각 사이트로 쉽게 접근할 수
-                    있습니다.</p>
-                <a href="#">사이트 방문</a>
-                <a href="#">소스보기</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="asset/img/quse.jpg" alt="Card Image 2">
-            <div class="card-content">
-                <div class="h3-container">
-                    <span class="blue-circle"></span>
-                    <h3>“정보처리 기능사 시험을 즐겁게!”</h3>
-                </div>
-                <p>이 사이트의 주요 스킬은 SCRIPT와 JSON 입니다. 정보처리 기능사 필기를 준비하는 과정에서 ‘ 조금 더 재밌게 배울 방법 없을까? ‘ 라는 생각에 퀴즈 게임 형식으로 제작하게
-                    되었습니다.</p>
-                <a href="#">사이트 방문</a>
-                <a href="#">소스보기</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="asset/img/cssanime.jpg" alt="Card Image 3">
-            <div class="card-content">
-                <div class="h3-container">
-                    <span class="blue-circle"></span>
-                    <h3>“css3만 사용해 애니메이션을 만들어보면 어떨까?”</h3>
-                </div>
-                <p>해당 사이트는 ‘ SCRIPT없이 css3와 html5만 사용해서 애니메이션을 만들어보면 어떨까? ‘ 라는 호기심에 제작하게 되었습니다. 화면을 돌아다니는 귀여운 유우령을
-                    만나보세요!</p>
-                <a href="#">사이트 방문</a>
-                <a href="#">소스보기</a>
-            </div>
-        </div>
-    </section>
-    <!-- section4 -->
-
-    <section id="section5">
-        <div class="content">
-            <div class="line-container">
-                <p class="line_own">the</p>
-                <p class="line_to">Creative</p>
-                <p class="line_tree">portfolio</p>
-            </div>
-            <p class="description">
-                어떤 일이든 노력하고 즐기면 그 결과는 빛을 바란다고 생각 <br />
-                합니다. 신입의 열정과 도전정신을 접목해 세계에 배움에 있어 <br />
-                겸손함을 유지하며 세계적인 곳까지 파고드는 <br />
-                개발자가 되겠습니다.
-            </p>
-        </div>
-        <div class="background-circle"></div>
-    </section>
-    <!-- section5 -->
-
-    <section id="section6">
-    </section>
-    <!-- section6 -->
-
-    <section id="section7">
-    </section>
-    <!-- section7 -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-        history.scrollRestoration = "auto"
-
         const circle = '<svg viewBox="0 0 67.4 67.4"><circle class="circle" cx="33.7" cy="33.7" r="33.7"/></svg>'
 
         class Particle {
