@@ -19,16 +19,17 @@
 }
 
 #header nav {
-    width: 100px;
-    height: 100px;
+    width: 5.5vw;
+    height: 5.5vw;
     background-color: var(--pointBg);
-    border-radius: 50%;
+    border-radius: 100%;
     text-align: center;
-    line-height: 100px;
+    line-height: 5.5vw;
     color: var(--white);
     font-family: var(--subfontE);
     text-transform: uppercase;
     font-weight: 300;
+    transform: rotate(45deg);
 }
 
 #section1 {
@@ -39,6 +40,7 @@
     justify-content: center;
     text-align: center;
     color: var(--pointBg);
+    position: fixed;
 }
 
 #section1 .text>div:nth-child(1) {
@@ -53,9 +55,8 @@
 #section1 .text>div:nth-child(2) {
     font-family: var(--fontE);
     font-weight: 400;
-    font-size: 13vw;
+    font-size: 11vw;
     line-height: 0.7;
-    text-transform: capitalize;
 }
 
 #section1 .text>div:nth-child(3) {
@@ -66,6 +67,64 @@
     text-align: right;
     margin-right: -5.7vw;
     margin-top: -1vw;
+}
+
+#section1 .intro_Circle {
+    position: relative;
+    /* 부모 요소에 상대 위치를 설정 */
+}
+
+#section1 .intro_Circle>.intro_Circle_left>div:nth-child(1) {
+    width: 31.5vw;
+    height: 31.5vw;
+    border-radius: 50%;
+    background-color: var(--pointBg);
+    position: absolute;
+    left: -97vw;
+    top: 7vw;
+}
+
+#section1 .intro_Circle>.intro_Circle_left>div:nth-child(2) {
+    width: 19.75vw;
+    height: 19.75vw;
+    border-radius: 50%;
+    background-color: var(--pointColor);
+    position: absolute;
+    left: -79vw;
+    top: 19.1vw;
+}
+
+#section1 .intro_Circle>.intro_Circle_right>div:nth-child(1) {
+    width: 26.5vw;
+    height: 26.5vw;
+    border-radius: 50%;
+    background-color: var(--pointBg);
+    position: absolute;
+    right: -22vw;
+    top: 12vw;
+}
+
+#section1 .intro_Circle>.intro_Circle_right>div:nth-child(2) {
+    width: 19.75vw;
+    height: 19.75vw;
+    border-radius: 50%;
+    background-color: var(--pointColor);
+    position: absolute;
+    right: -5vw;
+    top: 19.1vw;
+}
+
+#section1 .intro_Circle>.intro_Circle_center {
+    width: 19.75vw;
+    height: 19.75vw;
+    border-radius: 50%;
+    background-color: var(--pointColor);
+    position: absolute;
+    left: -48vw;
+    top: -8vw;
+    background-image: url(../img/intropototo.svg);
+    background-size: cover;
+    display: none;
 }
 
 #section2 {
