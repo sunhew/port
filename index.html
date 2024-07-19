@@ -114,37 +114,38 @@
                 .to(".char", { opacity: 1, y: -20, duration: 0.6, ease: "back.out(1.7)", stagger: { each: 0.2 } }, "<")  // Innovation 텍스트의 각 문자가 0.2초 간격으로 튀듯이 나타남
                 .to(".text div:nth-child(3)", { opacity: 1, y: 0, duration: 0.5, delay: 0.1 })  // Innovation 텍스트가 다 나타난 후 portfolio 텍스트 나타남
                 .to("header *", { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out", stagger: 0.1 }, "-=0.4")  // portfolio 텍스트가 나타난 후 헤더 요소들이 위에서 아래로 떨어지듯 나타남
-                .to(".intro_Circle_left div:nth-child(1)", { opacity: 1, x: 97, y: -7, duration: 0.5, ease: "back.out(1.7)" }, "+=0.2")  // 헤더 요소가 나타난 후 intro_Circle_left 첫 번째 요소가 대각선으로 튀어나옴
-                .to(".intro_Circle_right div:nth-child(1)", { opacity: 1, x: -22, y: -12, duration: 0.5, ease: "back.out(1.7)" }, "<0.1")  // intro_Circle_right 첫 번째 요소가 대각선으로 튀어나옴
-                .to(".intro_Circle_left div:nth-child(2)", { opacity: 1, x: 79, y: -19.1, duration: 0.5, ease: "back.out(1.7)" }, "<0.2")  // intro_Circle_left 두 번째 요소가 대각선으로 튀어나옴
-                .to(".intro_Circle_right div:nth-child(2)", { opacity: 1, x: -5, y: -19.1, duration: 0.5, ease: "back.out(1.7)" }, "<0.1")  // intro_Circle_right 두 번째 요소가 대각선으로 튀어나옴
+                .to(".intro_Circle_left div:nth-child(1)", { opacity: 1, x: 97, duration: 0.5, ease: "back.out(1.7)" }, "+=0.2")  // 헤더 요소가 나타난 후 intro_Circle_left 첫 번째 요소가 대각선으로 튀어나옴
+                .to(".intro_Circle_right div:nth-child(1)", { opacity: 1, x: -22, duration: 0.5, ease: "back.out(1.7)" }, "<0.1")  // intro_Circle_right 첫 번째 요소가 대각선으로 튀어나옴
+                .to(".intro_Circle_left div:nth-child(2)", { opacity: 1, x: 79, duration: 0.5, ease: "back.out(1.7)" }, "<0.2")  // intro_Circle_left 두 번째 요소가 대각선으로 튀어나옴
+                .to(".intro_Circle_right div:nth-child(2)", { opacity: 1, x: -5, duration: 0.5, ease: "back.out(1.7)" }, "<0.1");  // intro_Circle_right 두 번째 요소가 대각선으로 튀어나옴
 
-            // 스크롤 이벤트를 이용하여 intro_Circle 요소들이 중앙으로 이동
-            gsap.to(".intro_Circle_left div", {
-                x: 0,
-                y: 0,
-                duration: 1,
+            // 스크롤 이벤트를 이용하여 intro_Circle_left와 intro_Circle_right 요소들이 순차적으로 중앙으로 이동 (x축만 이동)
+            let scrollTimeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: "#section1",
-                    start: "top canter",
+                    start: "top top",
                     end: "bottom top",
                     scrub: true,
-                    markers: true
+                    invalidateOnRefresh: true,
                 }
             });
 
-            gsap.to(".intro_Circle_right div", {
-                x: 0,
-                y: 0,
+            scrollTimeline.to(".intro_Circle_left .circle1", {
+                x: '45vw', // 첫 번째 원이 중앙으로 이동
                 duration: 1,
-                scrollTrigger: {
-                    trigger: "#section1",
-                    start: "top canter",
-                    end: "bottom top",
-                    scrub: true,
-                    markers: true
-                }
-            });
+            }).to(".intro_Circle_left .circle2", {
+                x: '33vw', // 두 번째 원이 중앙으로 이동
+                duration: 1,
+            }, "<0.3"); // 첫 번째 원이 이동을 시작한 후 0.3초 뒤에 시작
+
+            scrollTimeline.to(".intro_Circle_right .circle3", {
+                x: '-45vw', // 첫 번째 원이 중앙으로 이동
+                y: '2vw',
+                duration: 1,
+            }, "-=0.5").to(".intro_Circle_right .circle4", {
+                x: '-33vw', // 두 번째 원이 중앙으로 이동
+                duration: 1,
+            }, "<0.3"); // 첫 번째 원이 이동을 시작한 후 0.3초 뒤에 시작
 
             function startParticles() {
                 let isPaused = false;
