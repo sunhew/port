@@ -126,7 +126,7 @@
                     start: "top top",
                     end: "bottom top",
                     scrub: true,
-                    invalidateOnRefresh: true,
+                    invalidateOnRefresh: true
                 }
             });
 
@@ -140,12 +140,28 @@
 
             scrollTimeline.to(".intro_Circle_right .circle3", {
                 x: '-45vw', // 첫 번째 원이 중앙으로 이동
-                y: '2vw',
                 duration: 1,
             }, "-=0.5").to(".intro_Circle_right .circle4", {
                 x: '-33vw', // 두 번째 원이 중앙으로 이동
                 duration: 1,
             }, "<0.3"); // 첫 번째 원이 이동을 시작한 후 0.3초 뒤에 시작
+
+            // 중앙 도착 후 원들 사라지게 하기
+            scrollTimeline.to([".intro_Circle_left .circle2", ".intro_Circle_right .circle3", ".intro_Circle_right .circle4"], {
+                opacity: 0,
+                duration: 1
+            });
+
+            // 스크롤 비율에 따라 circle1이 위로 이동
+            gsap.to(".intro_Circle_left .circle1", {
+                y: -window.innerHeight * 0.5, // 이 값을 조정하여 원하는 위치로 이동
+                scrollTrigger: {
+                    trigger: "#section1",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
 
             function startParticles() {
                 let isPaused = false;
