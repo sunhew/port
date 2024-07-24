@@ -131,6 +131,7 @@
     background-color: #000;
     position: relative;
     z-index: 2000;
+    overflow: hidden;
 }
 
 .coding,

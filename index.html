@@ -24,7 +24,19 @@
             height: 30px;
             position: absolute;
             transform: translateZ(0px);
-            fill: #0038e9;
+            fill: var(--pointBg);
+            border: 5px solid var(--white);
+        }
+
+        .follow-circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(245, 59, 8, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 3000;
+            mix-blend-mode: multiply;
         }
     </style>
 </head>
@@ -71,6 +83,7 @@
     <!-- //section2 -->
 
     <section id="section3">
+        <div class="follow-circle"></div>
         <div class="coding">
             <div class="circle"></div>
             <p class="split">Frontend</p>
@@ -168,9 +181,9 @@
             markers: true,
         });
 
-
         // #section3 텍스트 애니메이션 설정
         gsap.set(".coding .char, .project .char, .blog .char", { opacity: 0, y: 50 });
+        gsap.set(".coding .circle, .project .circle, .blog .circle", { y: -200, opacity: 0 });
 
         // .coding 애니메이션 설정
         const codingTl = gsap.timeline({
@@ -183,17 +196,23 @@
             },
         });
 
-        codingTl.to(".coding .char", {
-            opacity: 1,
+        codingTl.to(".coding .circle", {
             y: 0,
-            stagger: 0.05,
+            opacity: 1,
+            duration: 0.5,
             ease: "back.out(1.7)",
-        });
+        })
+            .to(".coding .char", {
+                opacity: 1,
+                y: 0,
+                stagger: 0.05,
+                ease: "back.out(1.7)",
+            }, "<");
 
-        // .blog 애니메이션 설정
-        const blogTl = gsap.timeline({
+        // .project 애니메이션 설정
+        const projectTl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".blog",
+                trigger: ".project",
                 start: "top center",
                 end: "bottom top",
                 toggleActions: "play reverse play reverse",
@@ -201,38 +220,85 @@
             },
         });
 
-        blogTl.to(".blog .char", {
-            opacity: 1,
+        projectTl.to(".project .circle", {
             y: 0,
-            stagger: 0.05,
+            opacity: 1,
+            duration: 0.5,
             ease: "back.out(1.7)",
-        });
+        })
+            .to(".project .char", {
+                opacity: 1,
+                y: 0,
+                stagger: 0.05,
+                ease: "back.out(1.7)",
+            }, "<");
 
-        // .project 애니메이션 설정
-        const projectTl = gsap.timeline({
+        // .blog 애니메이션 설정
+        const blogTl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".project",
-                start: "top center",
-                end: "center top",
+                trigger: ".blog",
+                start: "top 75%",
+                end: "bottom top",
                 toggleActions: "play reverse play reverse",
                 markers: true,
             },
         });
 
-        projectTl.to(".project .char", {
-            opacity: 1,
+        blogTl.to(".blog .circle", {
             y: 0,
-            stagger: 0.05,
+            opacity: 1,
+            duration: 0.5,
             ease: "back.out(1.7)",
-        });
+        })
+            .to(".blog .char", {
+                opacity: 1,
+                y: 0,
+                stagger: 0.05,
+                ease: "back.out(1.7)",
+            }, "<");
 
         // 스크롤 이벤트 리스너 추가
         window.addEventListener("scroll", () => {
             ScrollTrigger.refresh();
         });
 
+        // 마우스 따라다니는 원 애니메이션
+        const followCircle = document.querySelector(".follow-circle");
+        let mouseX = 0, mouseY = 0;
 
-    </script>
+        window.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        gsap.to({}, {
+            duration: 0.01,
+            repeat: -1,
+            onRepeat: () => {
+                gsap.set(followCircle, {
+                    x: mouseX - followCircle.offsetWidth / 2,
+                    y: mouseY - followCircle.offsetHeight / 2
+                });
+            }
+        });
+
+        ScrollTrigger.create({
+            trigger: "#section3",
+            start: "top 1%",
+            end: "bottom -90%",
+            onEnter: () => {
+                gsap.to(followCircle, { opacity: 1, duration: 0.3 });
+            },
+            onLeave: () => {
+                gsap.to(followCircle, { opacity: 0, duration: 0.3 });
+            },
+            onEnterBack: () => {
+                gsap.to(followCircle, { opacity: 1, duration: 0.3 });
+            },
+            onLeaveBack: () => {
+                gsap.to(followCircle, { opacity: 0, duration: 0.3 });
+            },
+        });
     </script>
 
     <script>
