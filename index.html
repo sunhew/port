@@ -8,11 +8,6 @@
 
     <link rel="stylesheet" href="asset/css/style.css">
     <style>
-        body {
-            overflow-x: hidden;
-            margin: 0;
-        }
-
         #particles {
             position: absolute;
             left: 0;
@@ -29,19 +24,7 @@
             height: 30px;
             position: absolute;
             transform: translateZ(0px);
-            fill: #0038E9;
-        }
-
-        .text div,
-        header *,
-        .intro_Circle_left div,
-        .intro_Circle_right div {
-            opacity: 0;
-        }
-
-        .char {
-            display: inline-block;
-            opacity: 0;
+            fill: #0038e9;
         }
     </style>
 </head>
@@ -55,9 +38,9 @@
 
     <section id="section1">
         <div class="text">
-            <div>the</div>
-            <div data-text-split>Innovation</div>
-            <div>portfolio</div>
+            <div class="t1 split">the</div>
+            <div class="t2 split">Creative</div>
+            <div class="t3 split">portfolio</div>
         </div>
         <div id="particles"></div>
         <svg>
@@ -70,137 +53,195 @@
                 </filter>
             </defs>
         </svg>
-        <div class="intro_Circle">
-            <div class="intro_Circle_left">
-                <div class="circle1"></div>
-                <div class="circle2"></div>
-            </div>
-            <div class="intro_Circle_right">
-                <div class="circle3"></div>
-                <div class="circle4"></div>
-            </div>
-            <div class="intro_Circle_center">
-                <div class="intro_circle"></div>
-                <div class="intro_abot"></div>
-            </div>
-        </div>
     </section>
     <!-- //section1 -->
 
-    <section id="section2"></section>
-    <section id="section3"></section>
+    <section id="section2">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+        <div class="circle c4"></div>
+        <div class="circle c5"></div>
+        <p class="desc split">
+            안녕하세요!<br />어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다. <br />신입의 열정과
+            도전정신을 깊숙히 새기며 배움에 있어 겸손함을 유지하며 <br />세부적인 곳까지 파고드는 개발자가
+            되겠습니다.
+        </p>
+    </section>
+    <!-- //section2 -->
+
+    <section id="section3">
+        <div class="coding">
+            <div class="circle"></div>
+            <p class="split">Frontend</p>
+            <h2 class="split">Coding</h2>
+        </div>
+        <div class="project">
+            <div class="circle"></div>
+            <h2 class="split">Project</h2>
+            <p class="split">Full - stack</p>
+        </div>
+        <div class="blog">
+            <div class="circle"></div>
+            <h2 class="split">Blog</h2>
+            <p class="split">Revise</p>
+            <div class="image-placeholder"></div>
+        </div>
+        <div class="section3_div"></div>
+    </section>
+    <!-- //section3 -->
+
     <section id="section4"></section>
     <section id="section5"></section>
     <section id="section6"></section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/timothydesign/script/split-type.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
     <script>
         gsap.registerPlugin(ScrollTrigger);
-
-        $(document).ready(function () {
-            // 텍스트를 개별 문자로 분리
-            let splitType = new SplitType("[data-text-split]", {
-                types: "chars",
-                tagName: "span"
-            });
-
-            let tl = gsap.timeline();
-            tl.set(".text div, header *, .intro_Circle_left div, .intro_Circle_right div", { opacity: 0, y: -50 })  // 모든 텍스트 요소, 헤더 요소, intro_Circle 요소를 숨기고 위로 이동
-                .to(".text div:nth-child(1)", { opacity: 1, y: 0, duration: 0.5, delay: 0.5 })  // the 텍스트 나타남
-                .to(".text div:nth-child(2)", { opacity: 1, y: 0, duration: 0.5, onStart: startParticles })  // Innovation 텍스트 나타날 때 particles 시작
-                .to(".char", { opacity: 1, y: -20, duration: 0.6, ease: "back.out(1.7)", stagger: { each: 0.2 } }, "<")  // Innovation 텍스트의 각 문자가 0.2초 간격으로 튀듯이 나타남
-                .to(".text div:nth-child(3)", { opacity: 1, y: 0, duration: 0.5, delay: 0.1 })  // Innovation 텍스트가 다 나타난 후 portfolio 텍스트 나타남
-                .to("header *", { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out", stagger: 0.1 }, "-=0.4")  // portfolio 텍스트가 나타난 후 헤더 요소들이 위에서 아래로 떨어지듯 나타남
-                .to(".intro_Circle_left div:nth-child(1)", { opacity: 1, x: 97, duration: 0.5, ease: "back.out(1.7)" }, "+=0.2")  // 헤더 요소가 나타난 후 intro_Circle_left 첫 번째 요소가 대각선으로 튀어나옴
-                .to(".intro_Circle_right div:nth-child(1)", { opacity: 1, x: -22, duration: 0.5, ease: "back.out(1.7)" }, "<0.1")  // intro_Circle_right 첫 번째 요소가 대각선으로 튀어나옴
-                .to(".intro_Circle_left div:nth-child(2)", { opacity: 1, x: 79, duration: 0.5, ease: "back.out(1.7)" }, "<0.2")  // intro_Circle_left 두 번째 요소가 대각선으로 튀어나옴
-                .to(".intro_Circle_right div:nth-child(2)", { opacity: 1, x: -5, duration: 0.5, ease: "back.out(1.7)" }, "<0.1");  // intro_Circle_right 두 번째 요소가 대각선으로 튀어나옴
-
-            // 스크롤 이벤트를 이용하여 intro_Circle_left와 intro_Circle_right 요소들이 순차적으로 중앙으로 이동 (x축만 이동)
-            let scrollTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: "#section1",
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true,
-                    invalidateOnRefresh: true
-                }
-            });
-
-            scrollTimeline.to(".intro_Circle_left .circle1", {
-                x: '45vw', // 첫 번째 원이 중앙으로 이동
-                duration: 1,
-            }).to(".intro_Circle_left .circle2", {
-                x: '33vw', // 두 번째 원이 중앙으로 이동
-                duration: 1,
-            }, "<0.3"); // 첫 번째 원이 이동을 시작한 후 0.3초 뒤에 시작
-
-            scrollTimeline.to(".intro_Circle_right .circle3", {
-                x: '-45vw', // 첫 번째 원이 중앙으로 이동
-                duration: 1,
-            }, "-=0.5").to(".intro_Circle_right .circle4", {
-                x: '-33vw', // 두 번째 원이 중앙으로 이동
-                duration: 1,
-            }, "<0.3"); // 첫 번째 원이 이동을 시작한 후 0.3초 뒤에 시작
-
-            // 중앙 도착 후 원들 사라지게 하기
-            scrollTimeline.to([".intro_Circle_left .circle2", ".intro_Circle_right .circle3", ".intro_Circle_right .circle4"], {
-                opacity: 0,
-                duration: 1
-            });
-
-            // 스크롤 비율에 따라 circle1이 위로 이동
-            gsap.to(".intro_Circle_left .circle1", {
-                y: -window.innerHeight * 0.5, // 이 값을 조정하여 원하는 위치로 이동
-                scrollTrigger: {
-                    trigger: "#section1",
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true
-                }
-            });
-
-            function startParticles() {
-                let isPaused = false;
-                window.onblur = function () {
-                    isPaused = true;
-                }.bind(this);
-                window.onfocus = function () {
-                    isPaused = false;
-                }.bind(this);
-
-                let particles = [];
-
-                setInterval(function () {
-                    if (!isPaused) {
-                        particles.push(
-                            new Particle(circle, {
-                                "x": (Math.random() * $(window).width()),
-                                "y": $(window).height() + 100
-                            }, (1 + Math.random()))
-                        );
-                    }
-                }, 180);
-
-                function update() {
-                    particles = particles.filter(function (p) {
-                        return p.move();
-                    });
-                    requestAnimationFrame(update.bind(this));
-                }
-                update();
-            }
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         });
 
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 텍스트를 개별 문자로 분리
+        const targets = gsap.utils.toArray(".split");
+        let SplitClient = new SplitType(targets, { type: "lines, words, chars" });
+        let lines = SplitClient.lines;
+        let words = SplitClient.words;
+        let chars = SplitClient.chars;
+
+        // 초기 애니메이션 설정
+        gsap.set("#particles", { opacity: 0 });
+        gsap.set(".text .t1 .char", { opacity: 0, x: -100 });
+        gsap.set(".text .t2 .char", { opacity: 0, x: -10, scale: 0.8 });
+        gsap.set(".text .t3 .char", { opacity: 0, y: 20 });
+        gsap.set("#header", { top: -150 });
+
+        const tl = gsap.timeline();
+        setTimeout(() => {
+            tl.to(".text .t1 .char", { opacity: 1, x: 0 });
+            tl.to(".text .t2 .char", { opacity: 1, x: 0, stagger: 0.06, scale: 1, ease: "back.out(1.7)" });
+            tl.to(".text .t3 .char", { opacity: 1, y: 0, duration: 0.4 });
+            tl.to("#header", { top: 0, ease: "back.out(1.7)" });
+            tl.to("#particles", { opacity: 1, duration: 1 });
+        }, 3000);
+
+        // #section2 애니메이션 설정
+        gsap.set("#section2 .c5", { opacity: 0 });
+        gsap.set("#section2 .desc .char", { opacity: 0 });
+
+        const ani2 = gsap.timeline();
+
+        ani2.to("#section2 .c1", { x: 0, y: 0 }, "a");
+        ani2.to("#section2 .c2", { x: 0, y: 0 }, "a");
+        ani2.to("#section2 .c3", { x: 0, y: 0 }, "a");
+        ani2.to("#section2 .c4", { x: 0, y: 0 }, "a");
+        ani2.to("#section2 .c5", { opacity: 1 });
+
+        ani2.to("#section2 .desc .char", {
+            opacity: 1,
+            y: 0,
+            stagger: 0.05,
+            duration: 0.5,
+            ease: "back.out(1.7)"
+        });
+
+        ScrollTrigger.create({
+            animation: ani2,
+            trigger: "#section2",
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true,
+        });
+
+
+        // #section3 텍스트 애니메이션 설정
+        gsap.set(".coding .char, .project .char, .blog .char", { opacity: 0, y: 50 });
+
+        // .coding 애니메이션 설정
+        const codingTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".coding",
+                start: "top center",
+                end: "bottom top",
+                toggleActions: "play reverse play reverse",
+                markers: true,
+            },
+        });
+
+        codingTl.to(".coding .char", {
+            opacity: 1,
+            y: 0,
+            stagger: 0.05,
+            ease: "back.out(1.7)",
+        });
+
+        // .blog 애니메이션 설정
+        const blogTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".blog",
+                start: "top center",
+                end: "bottom top",
+                toggleActions: "play reverse play reverse",
+                markers: true,
+            },
+        });
+
+        blogTl.to(".blog .char", {
+            opacity: 1,
+            y: 0,
+            stagger: 0.05,
+            ease: "back.out(1.7)",
+        });
+
+        // .project 애니메이션 설정
+        const projectTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".project",
+                start: "top center",
+                end: "center top",
+                toggleActions: "play reverse play reverse",
+                markers: true,
+            },
+        });
+
+        projectTl.to(".project .char", {
+            opacity: 1,
+            y: 0,
+            stagger: 0.05,
+            ease: "back.out(1.7)",
+        });
+
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener("scroll", () => {
+            ScrollTrigger.refresh();
+        });
+
+
+    </script>
+    </script>
+
+    <script>
         const circle = '<svg viewBox="0 0 67.4 67.4"><circle class="circle" cx="33.7" cy="33.7" r="33.7"/></svg>';
 
         class Particle {
             constructor(svg, coordinates, friction) {
                 this.svg = svg;
-                this.steps = ($(window).height()) / 2;
+                this.steps = $(window).height() / 2;
                 this.item = null;
                 this.friction = friction;
                 this.coordinates = coordinates;
@@ -208,39 +249,87 @@
                 this.dimensions = this.render();
                 this.move();
                 this.rotation = Math.random() > 0.5 ? "-" : "+";
-                this.scale = 0.4 + (Math.random() * 2);
-                this.siner = $(window).width() / 2.5 * Math.random();
+                this.scale = 0.4 + Math.random() * 2;
+                this.siner = ($(window).width() / 2.5) * Math.random();
             }
             destroy() {
                 this.item.remove();
             }
+
             move() {
                 this.position = this.position - this.friction;
                 let top = this.position;
-                let left = this.coordinates.x + Math.sin(this.position * Math.PI / this.steps) * this.siner;
+                let left = this.coordinates.x + Math.sin((this.position * Math.PI) / this.steps) * this.siner;
                 this.item.css({
-                    transform: "translateX(" + left + "px) translateY(" + top + "px) scale(" + this.scale + ") rotate(" + (this.rotation) + (this.position + this.dimensions.height) + "deg)"
+                    transform:
+                        "translateX(" +
+                        left +
+                        "px) translateY(" +
+                        top +
+                        "px) scale(" +
+                        this.scale +
+                        ") rotate(" +
+                        this.rotation +
+                        (this.position + this.dimensions.height) +
+                        "deg)",
                 });
-                if (this.position < -(this.dimensions.height)) {
+
+                if (this.position < -this.dimensions.height) {
                     this.destroy();
                     return false;
                 } else {
                     return true;
                 }
             }
+
             render() {
                 this.item = $(this.svg, {
                     css: {
-                        transform: "translateX(" + this.coordinates.x + "px) translateY(" + this.coordinates.y + "px)"
-                    }
+                        transform:
+                            "translateX(" + this.coordinates.x + "px) translateY(" + this.coordinates.y + "px)",
+                    },
                 });
                 $("#particles").append(this.item);
                 return {
                     width: this.item.width(),
-                    height: this.item.height()
+                    height: this.item.height(),
                 };
             }
         }
+
+        let isPaused = false;
+        window.onblur = function () {
+            isPaused = true;
+        }.bind(this);
+        window.onfocus = function () {
+            isPaused = false;
+        }.bind(this);
+
+        //-------------------------------
+        let particles = [];
+
+        setInterval(function () {
+            if (!isPaused) {
+                particles.push(
+                    new Particle(
+                        circle,
+                        {
+                            x: Math.random() * $(window).width(),
+                            y: $(window).height() + 100,
+                        },
+                        1 + Math.random()
+                    )
+                );
+            }
+        }, 880);
+
+        function update() {
+            particles = particles.filter(function (p) {
+                return p.move();
+            });
+            requestAnimationFrame(update.bind(this));
+        }
+        update();
     </script>
 </body>
 

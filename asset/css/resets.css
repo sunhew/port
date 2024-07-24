@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+/* 가로스크롤 제거 */
+body {
+    overflow-x: hidden;
+}
+
 /* // 공백 초기화 */
 body,
 button,
