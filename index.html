@@ -104,49 +104,55 @@
     <!-- //section3 -->
 
     <section id="section4">
-        <div class="card">
-            <img src="asset/img/mainhtml.jpg" alt="Card Image 1">
-            <div class="overlay-content">
-                <div class="h3-container">
-                    <span class="blue-circle"></span>
-                    <h3>6개월 동안 작업한 작업물입니다.</h3>
+        <div class="container">
+            <div class="sec5__inner">
+                <p class="sub"><span class="dot"></span>6개월 동안 작업한 작업물입니다.</p>
+                <div class="article">
+                    <div class="imgWrap">
+                        <div class="img" style="background-image: url('asset/img/mainhtml.jpg');"></div>
+                    </div>
+                    <h3 class="title dotWrap"><span class="dot w15"></span>지난 6개월간의 기록.</h3>
+                    <p>이 사이트는 HTML5, CSS3, 그리고 JAVASCRIPT를 사용하여 개발했습니다.<br />6개월 동안 제작한 사이트들이 아이콘 형태로 모여 있어, 각 사이트로 쉽게
+                        접근할 수 있습니다.</p>
+                    <div class="link">
+                        <a href="#">사이트 보기</a>
+                        <a href="#">소스 보기</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card-content">
-                <div class="h3-container">
-                    <span class="blue-circle"></span>
-                    <h3>“지난 6개월간의 기록.”</h3>
-                </div>
-                <p>이 사이트는 HTML5, CSS3, 그리고 JAVASCRIPT를 사용하여 개발했습니다. 6개월 동안 제작한 사이트들이 아이콘 형태로 모여 있어, 각 사이트로 쉽게 접근할 수
-                    있습니다.</p>
-                <a href="#">사이트 방문</a>
-                <a href="https://github.com/sunhew/class2024">소스보기</a>
             </div>
         </div>
-        <div class="card">
-            <img src="asset/img/quse.jpg" alt="Card Image 2">
-            <div class="card-content">
-                <div class="h3-container">
-                    <span class="blue-circle"></span>
-                    <h3>“정보처리 기능사 시험을 즐겁게!”</h3>
+        <div class="container">
+            <div class="sec5__inner">
+                <div class="article">
+                    <div class="imgWrap">
+                        <div class="img" style="background-image: url('asset/img/quse.jpg');"></div>
+                    </div>
+                    <h3 class="title dotWrap"><span class="dot w15"></span>“정보처리 기능사 시험을 즐겁게!”</h3>
+                    <p>이 사이트의 주요 스킬은 SCRIPT와 JSON 입니다. <br />정보처리 기능사 필기를 준비하는 과정에서 ‘ 조금 더 재밌게 배울 방법 없을까? ‘ 라는 생각에 퀴즈 게임
+                        형식으로
+                        제작하게 되었습니다.</p>
+                    <div class="link">
+                        <a href="https://sunhew.github.io/class2024//quiz/index.html">사이트 방문</a>
+                        <a href="https://github.com/sunhew/class2024">소스 보기</a>
+                    </div>
                 </div>
-                <p>이 사이트의 주요 스킬은 SCRIPT와 JSON 입니다. 정보처리 기능사 필기를 준비하는 과정에서 ‘ 조금 더 재밌게 배울 방법 없을까? ‘ 라는 생각에 퀴즈 게임 형식으로 제작하게
-                    되었습니다.</p>
-                <a href="https://sunhew.github.io/class2024//quiz/index.html">사이트 방문</a>
-                <a href="https://github.com/sunhew/class2024">소스보기</a>
             </div>
         </div>
-        <div class="card">
-            <img src="asset/img/cssanime.jpg" alt="Card Image 3">
-            <div class="card-content">
-                <div class="h3-container">
-                    <span class="blue-circle"></span>
-                    <h3>“css3만 사용해 애니메이션을 만들어보면 어떨까?”</h3>
+        <div class="container">
+            <div class="sec5__inner">
+                <div class="article">
+                    <div class="imgWrap">
+                        <div class="img" style="background-image: url('asset/img/cssanime.jpg');"></div>
+                    </div>
+                    <h3 class="title dotWrap"><span class="dot w15"></span>“css3만 사용해 애니메이션을 만들어보면 어떨까?”</h3>
+                    <p>해당 사이트는 ‘ SCRIPT없이 css3와 html5만 사용해서 애니메이션을 만들어보면 어떨까? ‘ 라는 <br />호기심에 제작하게 되었습니다. 화면을 돌아다니는 귀여운
+                        유우령을
+                        만나보세요!</p>
+                    <div class="link">
+                        <a href="https://sunhew.github.io/class2024/css/index.html">사이트 방문</a>
+                        <a href="https://github.com/sunhew/class2024">소스 보기</a>
+                    </div>
                 </div>
-                <p>해당 사이트는 ‘ SCRIPT없이 css3와 html5만 사용해서 애니메이션을 만들어보면 어떨까? ‘ 라는 호기심에 제작하게 되었습니다. 화면을 돌아다니는 귀여운 유우령을
-                    만나보세요!</p>
-                <a href="https://sunhew.github.io/class2024/css/index.html">사이트 방문</a>
-                <a href="https://github.com/sunhew/class2024">소스보기</a>
             </div>
         </div>
     </section>
@@ -328,6 +334,7 @@
             markers: true,
         });
 
+
         // #section3 텍스트 애니메이션 설정
         gsap.set(".coding .char, .project .char, .blog .char", { opacity: 0, y: 50 });
         gsap.set(".coding .circle, .project .circle, .blog .circle", { y: -200, opacity: 0, duration: 1 });
@@ -338,7 +345,7 @@
                 trigger: ".coding",
                 start: "top center",
                 end: "bottom top",
-                toggleActions: "play reset play reset",
+                toggleActions: "play none none none",
                 markers: true,
             },
         });
@@ -362,7 +369,7 @@
                 trigger: ".project",
                 start: "top center",
                 end: "bottom top",
-                toggleActions: "play reset play reset",
+                toggleActions: "play none none none",
                 markers: true,
             },
         });
@@ -386,7 +393,7 @@
                 trigger: ".blog",
                 start: "top 75%",
                 end: "bottom top",
-                toggleActions: "play reset play reset",
+                toggleActions: "play none none none",
                 markers: true,
             },
         });
@@ -401,9 +408,8 @@
                 opacity: 1,
                 y: 0,
                 stagger: 0.05,
-                ease: "slideout",
+                ease: "back.out(1.7)",
             }, "<");
-
 
         // 스크롤 이벤트 리스너 추가
         window.addEventListener("scroll", () => {
@@ -449,45 +455,33 @@
         });
 
 
-        // #section5 애니메이션 설정
-        gsap.set(".card", { opacity: 0, y: 50 });
+        // #section4 애니메이션 설정
+        // 내부 이미지 확대 애니메이션
+        const ani3 = gsap.timeline();
 
-        // 각 카드에 대한 애니메이션 설정
-        gsap.utils.toArray(".card").forEach((card, i) => {
-            gsap.to(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%",
-                    end: "top 30%",
-                    toggleActions: "play none none reverse",
-                    markers: true,
-                },
-                opacity: 1,
-                y: 0,
-                duration: 1.6,
-                ease: "power1.out"
-            });
+        ani3.to(".sec5__inner .article .imgWrap .img", { top: "-10%", scale: 2.1, duration: 2, ease: "linear" });
 
-            // 오버레이 컨텐츠 애니메이션
-            gsap.fromTo(card.querySelector(".overlay-content"), {
-                opacity: 0,
-                y: -20
-            }, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%",
-                    end: "top 30%",
-                    toggleActions: "play none none reverse",
-                    markers: true,
-                },
-                opacity: 1,
-                y: 0,
-                duration: 3.6,
-                ease: "power1.out"
-            });
+        ScrollTrigger.create({
+            animation: ani3,
+            trigger: ".sec5__inner .article .imgWrap .img",
+            start: "top 20%",
+            end: "bottom bottom",
+            scrub: 4,
+            markers: true,
         });
 
+        ani3.to(".article .title .dot", { x: 400, duration: 1, ease: "power2.out" });
 
+        ScrollTrigger.create({
+            animation: ani3,
+            trigger: "#section4",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+            markers: true,
+        });
+
+        // section5 애니메이션
         gsap.set("#section5 .line_own, #section5 .line_to, #section5 .line_tree, #section5 .description", {
             opacity: 0,
             y: -100,
