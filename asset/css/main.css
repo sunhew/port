@@ -391,7 +391,7 @@
     text-decoration: none;
     border-bottom: 1px solid;
     transition: color 0.3s, border-color 0.3s;
-    color: black;
+    color: var(--black);
     margin-right: 10px;
 }
 
@@ -400,8 +400,7 @@
 }
 
 .card-content a:hover {
-    color: #0056b3;
-    border-color: #0056b3;
+    color: var(--pointBg);
 }
 
 #section4 .card:nth-child(1) {
@@ -461,12 +460,16 @@
     font-weight: 800;
     margin-top: -1vw;
     margin-left: -65vw;
+    opacity: 0;
+    transform: translateY(-100%);
 }
 
 #section5 .line_to {
     font-size: 15vw;
     font-weight: 400;
     margin-top: -9vw;
+    opacity: 0;
+    transform: translateY(-100%);
 }
 
 #section5 .line_tree {
@@ -474,6 +477,8 @@
     font-weight: 900;
     margin-top: -12vw;
     margin-right: -51.5vw;
+    opacity: 0;
+    transform: translateY(-100%);
 }
 
 #section5 .description {
@@ -484,6 +489,8 @@
     text-align: left;
     margin-left: 72vw;
     margin-top: -3vw;
+    opacity: 0;
+    transform: translateY(-100%);
 }
 
 /* 배경 원 스타일 */
@@ -499,6 +506,7 @@
     border-radius: 50%;
     z-index: 1;
 }
+
 
 /* section6 */
 #section6 {
@@ -615,8 +623,8 @@
     position: absolute;
     top: 92%;
     left: 20%;
-
 }
+
 
 /* section7 */
 #section7 {
