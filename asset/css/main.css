@@ -6,6 +6,7 @@
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    z-index: 100000;
 }
 
 #header h1 {
@@ -306,6 +307,10 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
+    opacity: 0;
+    /* 초기 상태를 숨김으로 설정 */
+    transform: translateY(50px);
+    /* 초기 위치를 아래로 설정 */
 }
 
 .card img {
@@ -421,6 +426,7 @@
     transform: translate(-50%, -50%);
 }
 
+
 /* section5 */
 #section5 {
     width: 100%;
@@ -522,24 +528,13 @@
 }
 
 .circle_card-content {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     width: 90%;
-    background: rgba(255, 255, 255, 0.8);
     padding: 1rem;
     text-align: left;
     color: black;
-    transition: opacity 0.3s, transform 0.3s;
-    opacity: 0;
-    transform: translateY(10px);
     border-radius: 15px;
-}
-
-.circle_card:hover .circle_card-content {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    margin-top: 1rem;
+    /* 이미지와 텍스트 사이의 간격 추가 */
 }
 
 .circle_h3-container {
@@ -572,7 +567,7 @@
     text-decoration: none;
     border-bottom: 1px solid;
     transition: color 0.3s, border-color 0.3s;
-    color: black;
+    color: var(--black);
     margin-right: 10px;
 }
 
@@ -581,8 +576,8 @@
 }
 
 .circle_card-content a:hover {
-    color: #0056b3;
-    border-color: #0056b3;
+    color: var(--pointBg);
+    border-color: var(--pointBg);
 }
 
 /* 위치 지정 */
@@ -592,14 +587,151 @@
     left: 10%;
 }
 
+.card-content1 {
+    position: absolute;
+    top: 32%;
+    left: 15%;
+}
+
 .circle_card2 {
     position: absolute;
     top: 40%;
     right: 10%;
 }
 
+.card-content2 {
+    position: absolute;
+    top: 63%;
+    right: -57%;
+}
+
 .circle_card3 {
     position: absolute;
     top: 70%;
     left: 10%;
+}
+
+.card-content3 {
+    position: absolute;
+    top: 92%;
+    left: 20%;
+
+}
+
+/* section7 */
+#section7 {
+    width: 100%;
+    height: 110vh;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: var(--white);
+    font-family: var(--fontE);
+    font-weight: 900;
+    padding: 2rem;
+    box-sizing: border-box;
+    margin-top: 16.8125vw;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    position: relative;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    margin-left: -6%;
+}
+
+.footer-left h1 {
+    font-size: 8.5vw;
+    margin: 0;
+}
+
+.footer-left h2 {
+    font-size: 6.375vw;
+    margin: 0;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    align-items: flex-end;
+    margin: 27%;
+    margin-right: -4%
+}
+
+.footer-right .developer-site,
+.footer-right .social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-right p {
+    font-size: 1.25vw;
+    font-weight: 300;
+    margin-bottom: 1vw;
+    color: var(--pointText);
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-right li {
+    font-size: 1.75vw;
+    margin-bottom: 0.5vw;
+}
+
+.footer-right a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+.scroll-top {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    width: 3vw;
+    height: 3vw;
+    background-color: var(--black);
+    border: 2px solid var(--pointText);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.scroll-top span {
+    font-size: 1.5vw;
+    color: var(--white);
+}
+
+.scroll-top:hover {
+    background-color: var(--black300);
+}
+
+/* 추가적으로 다른 요소들과 겹치지 않도록 */
+#section7 h1,
+#section7 h2,
+#section7 a,
+#section7 p {
+    position: relative;
+    z-index: 2;
 }
