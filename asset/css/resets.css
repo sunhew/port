@@ -12,6 +12,15 @@ body {
     overflow-x: hidden;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
 /* // 공백 초기화 */
 body,
 button,
