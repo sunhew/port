@@ -11,16 +11,16 @@
 @import "main.css";
 
 /* 한글 타이핑 */
-
+/* 
 #target {
     font-family: var(--fontK);
     text-align: center;
     font-weight: bold;
     font-size: 0.8vw;
     margin-top: 150px;
-}
+} */
 
-#target::after {
+.target::after {
     content: "|";
     right: 0;
     animation: caret .8s infinite;

@@ -289,8 +289,8 @@
 /* section4 */
 #section4 {
     width: 100%;
-    height: 3885px;
-    background-color: #fff;
+    height: 380vh;
+    margin-top: 2vw;
 }
 
 .sec5__inner .sub {
@@ -298,6 +298,7 @@
     position: relative;
     padding-left: 20px;
     margin-bottom: 20vh;
+
 }
 
 .dotWrap {
@@ -307,7 +308,7 @@
 .dot {
     position: absolute;
     left: 0;
-    top: -5px;
+    top: -2.5vw;
     padding-left: 20px;
     display: inline-block;
 }
@@ -321,11 +322,11 @@
     content: "";
     width: 10px;
     height: 10px;
-    background-color: #0038e9;
+    background-color: var(--pointBg);
     border-radius: 50%;
     position: absolute;
     left: 0;
-    top: -6px;
+    top: 3vw
 }
 
 .dot.w15::before {
@@ -333,10 +334,14 @@
     height: 15px;
 }
 
+.article {
+    text-align: left;
+}
+
 .sec5__inner .article .imgWrap {
     width: 45%;
     aspect-ratio: 9/12;
-    background-color: #000;
+    background-color: var(--white100);
     position: relative;
     overflow: hidden;
 }
@@ -353,11 +358,6 @@
     width: 160%;
     height: 160%;
     background: url(../img/mainhtml.jpg) center center no-repeat;
-}
-
-.sec5__inner .article.a2 .imgWrap .img {
-    background: url(../img/quse.jpg) center center no-repeat;
-    background-size: cover;
 }
 
 .sec5__inner .article .imgWrap .link {
@@ -377,7 +377,7 @@
     margin-bottom: 20px;
     display: inline-block;
     border-radius: 50px;
-    border: 1px solid #fff;
+    border: 1px solid var(--white);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
@@ -401,18 +401,26 @@
 
 .sec5__inner .article h3 {
     font-family: var(--fontK);
-    color: #0038e9;
+    color: var(--pointBg);
     font-size: 2.125vw;
     margin-top: 30px;
     padding-left: 20px;
 }
 
-.sec5__inner .article p {
+.sec5__inner .article p,
+.sec5__inner .article pre {
     font-family: var(--fontK);
     margin-top: 20px;
-    color: #666;
+    color: var(--black600);
     line-height: 1.6;
-    padding-left: 20px;
+    padding-left: 1.5vw;
+}
+
+.sec5__inner .article pre,
+.article3 pre {
+    width: 50%;
+    margin-left: -7.6vw;
+    text-align-last: left;
 }
 
 .article2 {
@@ -423,7 +431,7 @@
 .article2 .imgWrap {
     width: 35%;
     aspect-ratio: 9/12;
-    background-color: #000;
+    background-color: var(--white100);
     position: relative;
     overflow: hidden;
     margin-left: auto;
@@ -441,16 +449,17 @@
 
 .article2 h3 {
     font-family: var(--fontK);
-    color: #0038e9;
+    color: var(--pointBg);
     font-size: 2.125vw;
     margin-top: 30px;
     padding-left: 20px;
 }
 
-.article2 p {
+.article2 p,
+.article2 pre {
     font-family: var(--fontK);
     margin-top: 20px;
-    color: #666;
+    color: var(--black600);
     line-height: 1.6;
     padding-left: 20px;
 }
@@ -472,7 +481,7 @@
     margin-bottom: 20px;
     display: inline-block;
     border-radius: 50px;
-    border: 1px solid #fff;
+    border: 1px solid var(--white);
     backdrop-filter: blur(10px);
 }
 
@@ -501,7 +510,7 @@
 .article3 .imgWrap {
     width: 35%;
     aspect-ratio: 9/12;
-    background-color: #000;
+    background-color: var(--white100);
     position: relative;
     overflow: hidden;
     margin-left: 0%;
@@ -519,16 +528,17 @@
 
 .article3 h3 {
     font-family: var(--fontK);
-    color: #0038e9;
+    color: var(--pointBg);
     font-size: 2.125vw;
     margin-top: 30px;
     padding-left: 20px;
 }
 
-.article3 p {
+.article3 p,
+.article3 pre {
     font-family: var(--fontK);
     margin-top: 20px;
-    color: #666;
+    color: var(--black600);
     line-height: 1.6;
     padding-left: 20px;
 }
@@ -550,7 +560,7 @@
     margin-bottom: 20px;
     display: inline-block;
     border-radius: 50px;
-    border: 1px solid #fff;
+    border: 1px solid var(--white);
     backdrop-filter: blur(10px);
 }
 
@@ -575,7 +585,7 @@
 #section5 {
     width: 100%;
     height: 120vh;
-    background-color: #0038E9;
+    background-color: var(--pointBg);
     display: flex;
     justify-content: center;
     /* 수평 중앙 정렬 */
@@ -742,7 +752,7 @@
 
 .card-content1 {
     position: absolute;
-    top: 32%;
+    top: 48vw;
     left: 15%;
 }
 
@@ -754,7 +764,7 @@
 
 .card-content2 {
     position: absolute;
-    top: 63%;
+    top: 102vw;
     right: -57%;
 }
 
@@ -766,7 +776,7 @@
 
 .card-content3 {
     position: absolute;
-    top: 92%;
+    top: 157vw;
     left: 20%;
 }
 
