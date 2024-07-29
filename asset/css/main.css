@@ -960,14 +960,12 @@
     text-align: left;
     color: black;
     border-radius: 15px;
-    margin-top: 1rem;
     /* 이미지와 텍스트 사이의 간격 추가 */
 }
 
 .circle_h3-container {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .circle_blue-circle {
@@ -1016,7 +1014,7 @@
 
 .card-content1 {
     position: absolute;
-    top: 65vw;
+    top: 32%;
     left: 15%;
 }
 
@@ -1046,8 +1044,8 @@
 
 
 
-/* section7 */
-#section7 {
+/* footer */
+#footer {
     width: 100%;
     height: 110vh;
     background-color: var(--black);
