@@ -758,7 +758,7 @@
 
 .card-content1 {
     position: absolute;
-    top: 48vw;
+    top: 32%;
     left: 15%;
 }
 
@@ -770,7 +770,7 @@
 
 .card-content2 {
     position: absolute;
-    top: 102vw;
+    top: 62%;
     right: -57%;
 }
 
@@ -782,7 +782,7 @@
 
 .card-content3 {
     position: absolute;
-    top: 157vw;
+    top: 92%;
     left: 20%;
 }
 
