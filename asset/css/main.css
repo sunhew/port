@@ -6,7 +6,7 @@
     padding: 1rem;
     display: flex;
     justify-content: space-between;
-    z-index: 100000;
+    z-index: 1000;
 }
 
 #header h1 {
@@ -20,13 +20,13 @@
 }
 
 #header nav {
-    width: 100px;
-    height: 100px;
+    width: 6.25vw;
+    height: 6.25vw;
     background-color: var(--pointBg);
     border-radius: 50%;
     text-align: center;
-    line-height: 100px;
-    color: #fff;
+    line-height: 119px;
+    color: var(--white);
     font-family: var(--subfontE);
     text-transform: uppercase;
     font-weight: 300;
