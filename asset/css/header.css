@@ -1,41 +1,33 @@
 #header {
     font-family: var(--subfontE);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
-    padding: 1vw;
-    position: fixed;
-    gap: 82vw;
-    top: 0;
+    z-index: 3000;
 }
 
-.logo {
-    font-size: 1.575vw;
+#header h1 {
+    font-size: 20px;
+    font-weight: 300;
 }
 
-.logo>span {
-    font-weight: bold;
+#header h1 span {
+    font-weight: 800;
 }
 
-.nav {
-    position: relative;
-    width: 5vw;
-    height: 5vw;
-    font-weight: lighter;
-    padding: 3vw;
+#header nav {
+    width: 100px;
+    height: 100px;
     background-color: var(--pointBg);
-    border-radius: 100%;
-    transform: rotate(25deg);
-    right: 0;
-}
-
-.nav p {
-    position: absolute;
-    justify-content: center;
+    border-radius: 50%;
     text-align: center;
-    font-size: 0.9vw;
-    color: var(--white);
-    font-weight: lighter;
-    border-radius: 100%;
-    right: 1.7vw;
-    top: 2.3vw;
+    line-height: 100px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    transform: rotate(45deg);
 }

@@ -1,38 +1,3 @@
-#header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1000;
-}
-
-#header h1 {
-    font-family: var(--subfontE);
-    font-size: 20px;
-    font-weight: 300;
-}
-
-#header h1 span {
-    font-weight: 800;
-}
-
-#header nav {
-    width: 6.25vw;
-    height: 6.25vw;
-    background-color: var(--pointBg);
-    border-radius: 50%;
-    text-align: center;
-    line-height: 119px;
-    color: var(--white);
-    font-family: var(--subfontE);
-    text-transform: uppercase;
-    font-weight: 300;
-    transform: rotate(45deg)
-}
-
 #section1 {
     width: 100%;
     height: 100vh;
@@ -294,7 +259,7 @@
 /* section4 */
 #section4 {
     width: 100%;
-    height: 550vh;
+    height: 5500px;
     margin-top: 2vw;
 }
 
@@ -516,7 +481,7 @@
 /* article3 */
 .article3 {
     text-align: left;
-    margin-top: -40vh;
+    margin-top: -24vw;
     padding-left: 1%;
 }
 
@@ -1007,39 +972,32 @@
 
 /* 위치 지정 */
 .circle_card1 {
-    position: absolute;
-    top: 10%;
-    left: 10%;
+    margin-top: 10%;
+    margin-left: 10%;
 }
 
 .card-content1 {
-    position: absolute;
-    top: 32%;
-    left: 15%;
+    margin-top: 2%;
+    margin-left: 19%;
 }
 
 .circle_card2 {
-    position: absolute;
-    top: 40%;
-    right: 10%;
+    margin-top: -4%;
+    margin-left: 64%;
 }
 
 .card-content2 {
-    position: absolute;
-    top: 176vw;
-    right: -57%;
+    margin-top: 2%;
+    margin-left: 73%;
 }
 
 .circle_card3 {
-    position: absolute;
-    top: 70%;
-    left: 10%;
+    margin-top: -11%;
 }
 
 .card-content3 {
-    position: absolute;
-    top: 288vw;
-    left: 20%;
+    margin-left: 16%;
+    margin-top: 0%;
 }
 
 
