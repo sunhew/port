@@ -1005,7 +1005,7 @@
 /* footer */
 #footer {
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     background-color: var(--black);
     display: flex;
     align-items: center;
@@ -1017,6 +1017,7 @@
     padding: 2rem;
     box-sizing: border-box;
     margin-top: 16.8125vw;
+    margin-bottom: 0;
 }
 
 .footer-container {
