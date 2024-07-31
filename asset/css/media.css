@@ -1,0 +1,122 @@
+@media (max-width: 1340px) {
+
+    /* section2 */
+    #section2 {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+
+    #section2 .circle {
+        width: 30vw;
+        height: 30vw;
+        background-color: var(--pointBg);
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 7vw;
+        margin: auto;
+    }
+
+    #section2 .circle.c1 {
+        transform: translate(-150%, -100%);
+    }
+
+    #section2 .circle.c2 {
+        transform: translate(150%, -100%);
+    }
+
+    #section2 .circle.c3 {
+        transform: translate(-100%, -100%);
+    }
+
+    #section2 .circle.c4 {
+        transform: translate(100%, -100%);
+    }
+
+    /* section3 */
+    .section3_div {
+        bottom: 18.17vw;
+        left: 59.77vw;
+    }
+
+    /* 카드섹션 */
+    #section4 {
+        width: 100%;
+        height: 4800px;
+        margin-top: 2vw;
+    }
+
+    .container {
+        width: 96%;
+    }
+
+    .dot.right {
+        left: auto;
+        right: -1vw;
+        top: -3vw;
+    }
+
+    .sec5__inner .article pre,
+    .article3 pre,
+    .article5 pre {
+        width: 500px;
+        font-size: 1.1vw;
+    }
+
+    .article2 p,
+    .article2 pre,
+    .article4 p,
+    .article4 pre,
+    .article6 p,
+    .article6 pre {
+        font-size: 1.1vw;
+    }
+
+    /* section5 */
+    #section5 {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 1250px) {
+
+    /* 카드섹션 */
+    #section4 {
+        width: 100%;
+        height: 4400px;
+        margin-top: 2vw;
+    }
+
+    .sec5__inner .article p,
+    .article2 p,
+    .article3 p,
+    .article4 p,
+    .article5 p,
+    .article6 p {
+        font-size: 1.1vw;
+    }
+
+    /* section5 */
+    #section5 {
+        height: 105vh;
+    }
+
+    .circle_card-content h3 {
+        font-size: 2vw;
+        margin: 0;
+        color: var(--pointBg);
+    }
+
+    .circle_card-content p {
+        font-size: 1.3vw;
+        margin-bottom: 10px;
+    }
+
+    .card-content2 {
+        margin-top: 0%;
+        margin-left: 64%;
+    }
+}

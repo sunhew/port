@@ -10,6 +10,11 @@
 @import "header.css";
 @import "main.css";
 
+/* 미디어커리 */
+@import "media.css";
+@import "media960.css";
+@import "media600.css";
+
 /* 한글 타이핑 */
 /* 
 #target {
