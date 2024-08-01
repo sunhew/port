@@ -7,9 +7,13 @@
     box-sizing: border-box;
 }
 
-/* 가로스크롤 제거 */
+/* 가로스크롤 제거, 드래그 방지 */
 body {
     overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
 }
 
 li {
