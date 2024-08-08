@@ -63,7 +63,7 @@
     .article3 pre,
     .article5 pre {
         width: 500px;
-        font-size: 1.1vw;
+        font-size: 14px;
     }
 
     .article2 p,
@@ -72,7 +72,7 @@
     .article4 pre,
     .article6 p,
     .article6 pre {
-        font-size: 1.1vw;
+        font-size: 14px;
     }
 
     /* section5 */
@@ -86,7 +86,7 @@
     /* 카드섹션 */
     #section4 {
         width: 100%;
-        height: 4400px;
+        height: 4700px;
         margin-top: 2vw;
     }
 
@@ -96,7 +96,85 @@
     .article4 p,
     .article5 p,
     .article6 p {
-        font-size: 1.1vw;
+        font-size: 15px;
+    }
+
+    .sec5__inner .article pre {
+        margin-left: -7%;
+        margin-bottom: 55vw;
+    }
+
+    .article3 pre,
+    .article5 pre {
+        margin-left: -6%;
+        margin-bottom: 8%;
+    }
+
+    /* section5 */
+    #section5 {
+        height: 105vh;
+    }
+
+    .circle_card-content h3 {
+        font-size: 2vw;
+        margin: 0;
+        color: var(--pointBg);
+    }
+
+    .circle_card-content p {
+        font-size: 1.3vw;
+        margin-bottom: 10px;
+    }
+
+    .card-content2 {
+        margin-top: 0%;
+        margin-left: 64%;
+    }
+}
+
+@media (max-width: 980px) {
+
+    /* 카드섹션 */
+    #section4 {
+        width: 100%;
+        height: 4500px;
+        margin-top: 2vw;
+    }
+
+    .sec5__inner .article p,
+    .article2 p,
+    .article3 p,
+    .article4 p,
+    .article5 p,
+    .article6 p {
+        font-size: 13px;
+    }
+
+    .sec5__inner .article pre,
+    .article3 pre,
+    .article5 pre {
+        width: 500px;
+        font-size: 13px;
+    }
+
+    .article2 p,
+    .article2 pre,
+    .article4 p,
+    .article4 pre,
+    .article6 p,
+    .article6 pre {
+        font-size: 13px;
+    }
+
+    .sec5__inner .article pre {
+        margin-left: -8%;
+        margin-bottom: 45vw;
+    }
+
+    .article3 pre,
+    .article5 pre {
+        margin-left: -6.8%;
+        margin-bottom: 10%;
     }
 
     /* section5 */
